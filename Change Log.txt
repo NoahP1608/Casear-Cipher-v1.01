@@ -1,2 +1,3 @@
 9/2/2022: v1.0 released, initial release
 9/2/2022: v1.01 released, made minor changes to shutting down the program
+15/2/2022: v1.02 released, fixed error with spaces in the plain/cipher text
