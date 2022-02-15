@@ -1,3 +1,4 @@
+
 import string
 program_running = True
 
@@ -8,10 +9,12 @@ key = 0
 
 def encrypt(message):
   length = len(message)
+
   final_word = ''
   for i in range(length):
     if message[i] == ' ':
       message[i] = ' '
+      final_word += ' '
     else:
       sum = message[i]
       if sum in alphabet:
@@ -29,12 +32,13 @@ def dencrypt(message):
   for i in range(length):
     if message[i] == ' ':
       message[i] = ' '
+      final_word += ' '
     else:
       sum = message[i]
       if sum in alphabet:
         new_sum = alphabet.index(sum)
         new_letter = alphabet[new_sum - key]
-        final_word = final_word + new_letter + '-' 
+        final_word = final_word + new_letter
   return final_word
 
 
@@ -48,26 +52,13 @@ while program_running:
   question = int(input('Would you like to 1: Set a key? Or 2: encode a message? Or 3: Decode a message? or 4: End the program '))
 
   if question == 1:
-    
     key = int(input('Please enter your key: '))
-    
   elif question == 2:
-    
     plaintext = list(input('Please enter your message: '))
     ciphertext = encrypt(plaintext)
     print(ciphertext)
-    
   elif question == 3:
-    
+ 
     new_cipher = list(input('Please enter your message: '))
     new_plaintext = dencrypt(new_cipher)
     print(new_plaintext)
-
-  elif question == 4:
-    program_running = False
-
-  else:
-    print('Please enter either 1,2,3 or 4')
-
-print('Thank you for using my cipher!')
-print('©Noah Perrott 2022')
